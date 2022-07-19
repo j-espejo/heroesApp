@@ -16,22 +16,22 @@ import { ImagenPipe } from './pipes/imagen.pipe';
 import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 
 @NgModule({
-  declarations: [
-    AgregarComponent,
-    BuscarComponent,
-    HeroeComponent,
-    HomeComponent,
-    ListadoComponent,
-    HeroeTarjetaComponent,
-    ImagenPipe,
-    ConfirmarComponent,
-  ],
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    FormsModule,
-    HeroesRoutingModule,
-    MaterialModule,
-  ],
+   declarations: [
+      AgregarComponent,
+      BuscarComponent,
+      HeroeComponent,
+      HomeComponent,
+      ListadoComponent,
+      HeroeTarjetaComponent,
+      ImagenPipe,
+      ConfirmarComponent,
+   ],
+   imports: [
+      CommonModule,
+      FlexLayoutModule,
+      FormsModule,
+      HeroesRoutingModule,
+      MaterialModule,
+   ],
 })
 export class HeroesModule {}

@@ -10,14 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 
 @NgModule({
-  declarations: [AppComponent, ErrorPageComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    AppRoutingModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+   declarations: [AppComponent, ErrorPageComponent],
+   imports: [
+      BrowserModule,
+      BrowserAnimationsModule,
+      HttpClientModule,
+      AppRoutingModule,
+   ],
+   providers: [],
+   bootstrap: [AppComponent],
 })
 export class AppModule {}
