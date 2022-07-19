@@ -4,38 +4,38 @@ import { Heroe } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
-  selector: 'app-buscar',
-  templateUrl: './buscar.component.html',
-  styles: [],
+   selector: 'app-buscar',
+   templateUrl: './buscar.component.html',
+   styles: [],
 })
 export class BuscarComponent implements OnInit {
-  termino: string = '';
-  heroes: Heroe[] = [];
+   termino: string = '';
+   heroes: Heroe[] = [];
 
-  heroeSeleccionado: Heroe | undefined;
+   heroeSeleccionado: Heroe | undefined;
 
-  constructor(private heroesService: HeroesService) {}
+   constructor(private heroesService: HeroesService) {}
 
-  ngOnInit(): void {}
+   ngOnInit(): void {}
 
-  buscando() {
-    this.heroesService
-      .getSugerencias(this.termino.trim())
-      .subscribe((heroes) => (this.heroes = heroes));
-  }
+   buscando() {
+      this.heroesService
+         .getSugerencias(this.termino.trim())
+         .subscribe((heroes) => (this.heroes = heroes));
+   }
 
-  opcionSeleccionada(event: MatAutocompleteSelectedEvent) {
-    //TODO: validar si es un string vacio
-    if (!event.option.value) {
-      this.heroeSeleccionado = undefined;
-      return;
-    }
+   opcionSeleccionada(event: MatAutocompleteSelectedEvent) {
+      //TODO: validar si es un string vacio
+      if (!event.option.value) {
+         this.heroeSeleccionado = undefined;
+         return;
+      }
 
-    const heroe: Heroe = event.option.value;
-    this.termino = heroe.superhero;
+      const heroe: Heroe = event.option.value;
+      this.termino = heroe.superhero;
 
-    this.heroesService
-      .getHeroePorId(heroe.id!)
-      .subscribe((heroe) => (this.heroeSeleccionado = heroe));
-  }
+      this.heroesService
+         .getHeroePorId(heroe.id!)
+         .subscribe((heroe) => (this.heroeSeleccionado = heroe));
+   }
 }
